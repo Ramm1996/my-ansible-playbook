@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+   - name: installing multiple services
+     yum: 
+       name: ['git','which','tree','wget','java']
+       state: installed

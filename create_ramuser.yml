@@ -1,0 +1,8 @@
+--- #creating a user
+- hosts: all
+  become: yes
+  user: ansible
+
+  tasks:
+    - name: creating a user
+      user: name=mahi

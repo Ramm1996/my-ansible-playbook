@@ -1,0 +1,6 @@
+--- # my roles
+- hosts: all
+  become: true
+    
+  roles:
+    - testrole

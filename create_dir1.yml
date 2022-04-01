@@ -1,0 +1,8 @@
+--- # creating dir in webservers
+- hosts: all
+  become: yes
+  tasks:
+    - name: creating a dir
+      file:
+        path: /home/ansible/ramdir
+        state: absent

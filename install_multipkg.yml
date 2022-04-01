@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: installng multole pakgs
+      yum:
+        name: ['git' 'tree' 'mysql''docker' 'java']
+        state: installed
+

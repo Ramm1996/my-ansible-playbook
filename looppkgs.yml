@@ -1,0 +1,14 @@
+--- 
+- hosts: all
+  become: true
+  tasks:
+    - name: installing multi pkgs
+      yum: name='{{item}}' state=absent
+      with_items:
+        - docker
+        - mysql
+        - java
+        - httpd
+        - git
+        - which
+        - wget

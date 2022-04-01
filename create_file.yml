@@ -1,0 +1,8 @@
+--- # my file
+- hosts: all
+  become: yes
+  tasks:
+    - name: creating a File
+      file:
+        path: /home/ansible/demofile2
+        state: touch

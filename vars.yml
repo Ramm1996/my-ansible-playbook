@@ -1,0 +1,14 @@
+--- # My vars Section
+- hosts: all
+  become: yes
+  connection: ssh
+  user: ansible
+
+  vars:
+    pkgname: httpd
+
+  tasks:
+    - name: removing httpd into hosts
+      action: yum name='{{pkgname}}' state=absent
+
+

@@ -1,0 +1,5 @@
+--- # This is my Demo Play book
+- hosts: webservers
+  tasks:
+    - name: Installing tree on webservers
+      action: yum pkg=tree state=installed

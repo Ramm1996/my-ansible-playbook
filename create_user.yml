@@ -1,0 +1,8 @@
+--- # User creation
+- name: my play book
+  hosts: all
+  become: yes
+  user: ansible
+  tasks:
+    - name: creating a user
+      user: name=Remo

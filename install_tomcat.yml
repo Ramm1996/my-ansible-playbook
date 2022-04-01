@@ -1,0 +1,31 @@
+--- # installing tomcat
+- hosts: all
+  become: true
+  tasks:
+    - name: install tomacat
+      yum:
+        name: java
+        state: installed
+
+
+    - name: download tomcat package
+      get_url:
+        url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.77/bin/apache-tomcat-8.5.77.tar.gz
+        dest: /opt
+
+    - name: extract tar.gz
+      unarchive:
+          src: /opt/apache-tomcat-8.5.77.tar.gz
+          dest: /opt
+          remote_src: yes
+
+    - name: prbiding excutable services
+      file:
+         path: /opt/apache-tomcat-8.5.77/bin/startup.sh
+         mode: 777
+
+    - name: start tom-cat service
+      shell: nohup ./startup.sh
+      args:
+         chdir: /opt/apache-tomcat-8.5.77/bin
+

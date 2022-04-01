@@ -1,0 +1,9 @@
+--- # This is my task play book
+- hosts: webservers
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: installing httpd in webservers
+      action: yum name=which state=present

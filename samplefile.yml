@@ -1,0 +1,13 @@
+--- 
+- hosts: all
+  become: true
+
+  tasks:
+    - name: creating file
+      file: path=/tmp/ramaafil state=touch
+
+    - name: crfeating a dir
+      file: path=/tmp/ramadir state=directory
+
+    - name: copy file from server to hosts
+      copy: src=./linuxfile14 dest=/home/ansible
