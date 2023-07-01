@@ -4,5 +4,5 @@
   tasks:
     - name: creating a dir
       file:
-        path: /home/ansible/ramdir
+        path: /home/ansible/ramdir1
         state: absent
